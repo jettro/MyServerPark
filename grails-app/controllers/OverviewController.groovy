@@ -16,7 +16,6 @@ class OverviewController {
 
     def index = {
         def environments = Environment.list()
-        println environments
         [environments:environments]
     }
 }
