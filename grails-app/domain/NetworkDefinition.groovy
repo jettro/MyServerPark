@@ -9,6 +9,6 @@ class NetworkDefinition {
     }
 
     public String toString() {
-        return vlan + ' ' + ipAddress
+        return vlan.name + ' ' + ipAddress
     }
 }

@@ -13,5 +13,6 @@
             <span class="author">${comment.name}</span>
             <span class="content">${comment.content}</span>
         </div>
+        <div><g:link controller="comment" action="edit" params="[id:comment.id]">edit</g:link></div>
     </g:each>
 </div>

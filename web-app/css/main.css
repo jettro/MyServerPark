@@ -5,7 +5,7 @@ html * {
 
 /* SPECIFIC FOR MY APP */
 #environments {
-    width:100%;
+    width:80%;
     float:left;
 }
 div.environment {
@@ -46,8 +46,9 @@ div.problem {
 div.cold {
     background-color:lightblue;
 }
-div.conments {
+div.comments {
     float:right;
+    width:20%;
 }
 div.comment {
     float:right;
