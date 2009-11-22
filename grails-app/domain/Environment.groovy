@@ -14,6 +14,7 @@ class Environment {
 
     static mapping = {
         lastDeploy type:PersistentDateTime
+        links sort:'title'
     }
 
     def String toString() {

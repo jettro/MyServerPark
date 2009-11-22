@@ -4,8 +4,12 @@ class Link {
     
     static constraints = {
         title(blank:false,maxSize:50)
-        url(blank:false,maxSize:150)
+        url(url:true, nullable:false)
     }
 
     static belongsTo = [environment:Environment]
+
+    static mapping = {
+        sort title:"asc"
+    }
 }
