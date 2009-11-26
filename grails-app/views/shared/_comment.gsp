@@ -7,7 +7,7 @@
 --%>
 
 <div class="comment">
-    <span class="title">${server.name}</span><span class="action"><g:link controller="comment" action="create" params="['server.id':server.id]">create comment</g:link></span>
+    <span class="title">${server.name}</span><span class="action"><g:link controller="comment" action="create" params="['server.id':server.id]">create comment</g:link><g:link controller="overview" action="newComment" params="['serverid':server.id]">create form</g:link></span>
     <g:each in="${comments}" status="i" var="comment">
         <div>
             <span class="author">${comment.name}</span>
