@@ -12,6 +12,12 @@
             <img src="${resource(dir:'images',file:'spinner.gif')}" alt="Spinner" />
         </div>	
         <div class="logo"><img src="${resource(dir:'images',file:'serverpark_logo.png')}" alt="ServerPark" /></div>
-        <g:layoutBody />		
+        <g:if test="${flash.error}">
+            <div class="flasherror">${flash.error}</div>
+        </g:if>
+        <g:if test="${flash.message}">
+            <div class="flash">${flash.message}</div>    
+        </g:if>
+        <g:layoutBody />
     </body>	
 </html>
