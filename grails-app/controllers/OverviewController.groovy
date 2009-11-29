@@ -16,9 +16,13 @@ class OverviewController {
         render(template:"/shared/comment",model:[comments:allComments, server:currentServer])
     }
 
-    def addComment = {
-        commentService.createComment(params.serverId.toLong(),params.name,params.content)
-        redirect(action:'index')
+    def addComment = {Comment comment ->
+        if (!comment.validate()) {
+            render(view:'newComment',model:[comment:comment, server:comment.server])
+            return
+        }
+        commentService.createComment(comment.server.id,comment.name,comment.content)
+            redirect(action:'index')
     }
 
     def newComment = {

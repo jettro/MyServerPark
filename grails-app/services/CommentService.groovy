@@ -17,6 +17,7 @@ class CommentService {
         if (comment.save()) {
             return comment
         } else {
+            log.info "Error while saving a comment"
             throw new CommentException (message: 'invalid comment being created', comment:comment)
         }
         
