@@ -6,10 +6,10 @@ class EnvironmentIntegrationTests extends GrailsUnitTestCase {
 
     protected void setUp() {
         env = new Environment(name:'dev',lastDeploy: new DateTime()).save()
-        env.addToLinks new Link(title:'bTest',url:'http://test.gridshore.nl')
+        env.addToLinks new Link(title:'bTest',url:'http://btest.gridshore.nl')
         env.addToLinks new Link(title:'aTest',url:'http://atest.gridshore.nl')
         env.addToLinks new Link(title:'zTest',url:'http://ztest.gridshore.nl')
-        env.addToLinks new Link(title:'tTest',url:'http://ztest.gridshore.nl')
+        env.addToLinks new Link(title:'tTest',url:'http://ttest.gridshore.nl')
         env.save(flush:true)
     }
 
