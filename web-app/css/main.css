@@ -73,6 +73,19 @@ div.comment div span.author {
     display:block;
 }
 
+div.flasherror {
+    display:block;
+    border: 1px solid red;
+    background-color: lightcoral;
+    color:black;
+}
+
+div.flash {
+    display:block;
+    border: 1px solid chartreuse;
+    background-color: lightgreen;
+    color:black;
+}
 /* GENERAL */
 
 .spinner {
