@@ -19,7 +19,7 @@
     <span class="menuButton"><g:link controller="server">Servers</g:link></span>
     <span class="menuButton"><g:link controller="vlan">Vlans</g:link></span>
 </div>
-    <g:each in="${environments}" status="i" var="environment">
+    <g:each in="${environments}" var="environment">
         <div class="yui-ge environment">
             <div class="yui-u first">
                 <span class="title"><g:link action="show" controller="environment" id="${environment.id}">${environment.name}</g:link>
@@ -35,12 +35,12 @@
                                 <li>${network.vlan} (${network.ipAddress})</li>
                             </g:each>
                         </ul>
-                        <g:remoteLink action="comments" params="[id:server.id, environmentId:environment.id]" update="comments${i}">comments</g:remoteLink>
+                        <g:remoteLink action="comments" params="[id:server.id]" update="comments${environment.id}">comments</g:remoteLink>
                     </div>
                 </g:each>
             </div>
             <div class="yui-u">
-                <div id="comments${i}" class="comments"></div>
+                <div id="comments${environment.id}" class="comments"></div>
             </div>
         </div>
     </g:each>

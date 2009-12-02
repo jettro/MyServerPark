@@ -7,7 +7,7 @@ class Server {
     Status status
     static hasMany = [networks:NetworkDefinition]
 
-    static belongsTo = Environment
+    static belongsTo = [environment:Environment]
 
     static constraints = {
         name(blank:false, maxSize:50)

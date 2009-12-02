@@ -12,19 +12,9 @@ class OverviewController {
             server {
                 eq("id", currentServer.id)
             }
+            order("dateCreated","desc")
         }
-        render(template: "/shared/comment",
-                model: [comments: allComments, server: currentServer, environmentId: params.environmentId])
-    }
-
-    def addComment = {Comment comment ->
-        if (!comment.validate()) {
-            render(view: 'newComment', model: [comment: comment, server: comment.server])
-            return
-        }
-        commentService.createComment(comment.server.id, comment.name, comment.content)
-        flash.message = "Comment is created for server ${comment.server.toString()}"
-        redirect(action: 'index')
+        render(template: "comment", model: [comments: allComments, server: currentServer])
     }
 
     def addCommentAjax = {Comment comment ->
@@ -32,8 +22,14 @@ class OverviewController {
             render "notGood"
         } else {
             commentService.createComment(comment.server.id, comment.name, comment.content)
-            render "Comment is created for server ${comment.server.toString()}"
+            redirect(action:"comments",id:comment.server.id)
         }
+    }
+
+    def removeCommentAjax = {
+        def currentComment = Comment.findById(params.id.toLong())
+        currentComment.delete()
+        redirect(action:"comments",id:currentComment.server.id)
     }
 
     def newComment = {
