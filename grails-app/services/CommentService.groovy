@@ -15,6 +15,7 @@ class CommentService {
         }
         def comment = new Comment(server:server, name:name, content:content)
         if (comment.save()) {
+            log.debug "new comment is created"
             return comment
         } else {
             log.info "Error while saving a comment"

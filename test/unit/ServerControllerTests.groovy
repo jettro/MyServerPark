@@ -10,7 +10,7 @@ class ServerControllerTests extends ControllerUnitTestCase {
     }
 
     void testList() {
-        // TODO look at bug in intellij
+
         mockDomain(Server,[new Server(name:"name",function:"function")])
         this.controller.list()
     }

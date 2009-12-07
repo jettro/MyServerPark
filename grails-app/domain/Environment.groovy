@@ -8,7 +8,7 @@ class Environment {
     static hasMany = [servers:Server,links:Link]
 
     static constraints = {
-        name(blank:false, maxSize:50)
+        name(blank:false, maxSize:50, unique:true)
         lastDeploy(blank:true)
     }
 
