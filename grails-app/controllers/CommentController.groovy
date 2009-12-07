@@ -6,6 +6,15 @@ class CommentController {
     def stats = {
         def comments = Comment.findAllByDateCreatedGreaterThan((new DateTime()).minusDays(7))
 
-        [comments:comments]
+        def commentData = [:]
+        comments.each {comment ->
+            def serverName = comment.server.name
+            if (commentData[serverName]) {
+                commentData[serverName]++
+            } else {
+                commentData[serverName] = 1
+            }
+        }
+        return [commentData:commentData]
     }
 }

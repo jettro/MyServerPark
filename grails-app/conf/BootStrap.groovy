@@ -1,11 +1,9 @@
 import org.joda.time.DateTime
 
 class BootStrap {
-    def init = {
-        servletContext ->
-          def statussus = ['OK', 'WARNING', 'PROBLEM', 'COLD']
-        statussus.each {
-            statusName ->
+    def init = { servletContext ->
+        def statussus = ['OK', 'WARNING', 'PROBLEM', 'COLD']
+        statussus.each { statusName ->
             def newStatus = new Status(name: statusName)
             newStatus.save()
         }
@@ -33,6 +31,19 @@ class BootStrap {
 
         def devEnvironment = Environment.findByName("Development")
         devEnvironment.addToServers(backend1)
+        devEnvironment.save(flush:true)
+
+        def now = new DateTime()
+
+        def comments = [['comment now','this is a comment from now',now,backend1],
+                        ['comment now 2','this is a comment from now too',now,backend1],
+                        ['comment from past','this is a comment from the past',now.minusDays(4),backend1],
+                        ['comment yesterday','this is a comment from yesterday',now.minusDays(1),backend1],
+                        ['comment old','this is an old comment',now.minusDays(20),backend1]]
+        comments.each {name, content, dateCreated, server ->
+            def comment = new Comment(name:name,content:content,server:server)
+            comment.save()
+        }
     }
     def destroy = {
     }
