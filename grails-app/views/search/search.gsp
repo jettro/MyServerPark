@@ -35,6 +35,15 @@
   <g:submitButton name="Search" value="Search"/>
 </g:form>
 
+<g:if test="${searchResult?.suggestedQuery}">
+  <%@ page import="org.codehaus.groovy.grails.plugins.searchable.util.StringQueryUtils" %>
+  <p>Did you mean
+    <g:link controller="search" action="search" params="[q: searchResult.suggestedQuery]">
+      ${StringQueryUtils.highlightTermDiffs(params.q.trim(), searchResult.suggestedQuery)}
+    </g:link>?
+  </p>
+</g:if>
+
 <g:if test="${searchResult?.results}">
   <g:each var="result" in="${searchResult.results}" status="hitNum">
     <div class="searchComment">

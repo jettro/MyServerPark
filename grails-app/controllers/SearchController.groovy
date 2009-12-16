@@ -32,6 +32,8 @@ class SearchController {
                 sr.highlights[index] = "..." + (matchedFragment ?:"") + "..."
             }
 
+            params.suggestQuery = true
+
             def searchResult = Comment.search (query,params)
             return [searchResult:searchResult]
         } catch (e) {
