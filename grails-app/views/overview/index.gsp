@@ -18,6 +18,7 @@
     <span class="menuButton"><g:link controller="environment">Environments</g:link></span>
     <span class="menuButton"><g:link controller="server">Servers</g:link></span>
     <span class="menuButton"><g:link controller="vlan">Vlans</g:link></span>
+    <span class="menuButton"><g:link controller="search">Search</g:link></span>
 </div>
     <g:each in="${environments}" var="environment">
         <div class="yui-ge environment">

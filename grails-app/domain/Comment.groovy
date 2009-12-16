@@ -18,5 +18,8 @@ class Comment {
         content(blank:false, widget:"textarea")
     }
 
-    static searchable = true
+    static searchable = {
+        only = ['content','name']
+        spellCheck "include"
+    }
 }

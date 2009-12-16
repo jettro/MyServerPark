@@ -80,6 +80,11 @@ div.flash {
     background-color: lightgreen;
     color:black;
 }
+
+.searchComment {
+    border: 1px solid lightskyblue;
+    margin-bottom:10px;
+}
 /* GENERAL */
 
 .spinner {
