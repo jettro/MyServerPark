@@ -1,1 +1,7 @@
-TODO: Add some documentation here
+Welcome to the project MyServerpark. This project was inspired by an itch we had at a project with a big server park. We were installing a lot of different servers and had problems gettings an overview of all problems we had with the servers. Therefore I created this application using grails. By now it has become more of a showcase of things you can do with grails.
+
+This project showcases the following features:
+- google chart integration
+- search with the searchable plugin
+
+Others will follow
