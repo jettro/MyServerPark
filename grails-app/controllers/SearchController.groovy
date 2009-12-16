@@ -24,6 +24,14 @@ class SearchController {
         }
 
         try {
+            params.withHighlighter = {highlighter, index, sr ->
+                if (!sr.highlights) {
+                    sr.highlights = []
+                }
+                def matchedFragment = highlighter.fragment("content")
+                sr.highlights[index] = "..." + (matchedFragment ?:"") + "..."
+            }
+
             def searchResult = Comment.search (query,params)
             return [searchResult:searchResult]
         } catch (e) {

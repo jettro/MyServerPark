@@ -36,10 +36,13 @@
 </g:form>
 
 <g:if test="${searchResult?.results}">
-  <g:each var="result" in="${searchResult.results}">
+  <g:each var="result" in="${searchResult.results}" status="hitNum">
     <div class="searchComment">
         <g:link controller="comment" action="show" id="${result.id}">${result.name}</g:link><br/>
         ${result.content}
+      <p>
+      ${searchResult.highlights[hitNum]}
+      </p>
     </div>
   </g:each>
 </g:if>
