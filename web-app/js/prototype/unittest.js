@@ -1,11 +1,20 @@
-// script.aculo.us unittest.js v1.8.0, Tue Nov 06 15:01:40 +0300 2007
+/*
+ * Copyright (c) 2009. Gridshore
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-// Copyright (c) 2005-2007 Thomas Fuchs (http://script.aculo.us, http://mir.aculo.us)
-//           (c) 2005-2007 Jon Tirsen (http://www.tirsen.com)
-//           (c) 2005-2007 Michael Schuerig (http://www.schuerig.de/michael/)
-//
-// script.aculo.us is freely distributable under the terms of an MIT-style license.
-// For details, see the script.aculo.us web site: http://script.aculo.us/
+// script.aculo.us unittest.js v1.8.0, Tue Nov 06 15:01:40 +0300 2007
 
 // experimental, Firefox-only
 Event.simulateMouse = function(element, eventName) {
