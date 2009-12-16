@@ -17,4 +17,6 @@ class Comment {
         name(blank:false, maxSize:50)
         content(blank:false, widget:"textarea")
     }
+
+    static searchable = true
 }
